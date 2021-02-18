@@ -1,4 +1,4 @@
-.player {
+.player-container {
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,7 @@
 .time-control {
   width: 50%;
   display: flex;
+  align-items: center;
   input {
     width: 100%;
     padding: 1rem 2rem;

@@ -8,7 +8,7 @@ import {
 
 const Player = () => {
   return (
-    <div className="Player">
+    <div className="player-container">
       <div className="time-control">
         <p>Start Time</p>
         <input type="range" />
@@ -21,8 +21,7 @@ const Player = () => {
           className="skip-forward"
           size="2x"
           icon={faAngleRight}
-       
-              />
+        />
       </div>
     </div>
   );
