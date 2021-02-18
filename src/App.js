@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //import Styles
 import "./styles/app.scss";
 //Add components
@@ -8,9 +8,12 @@ import Song from "./components/Song";
 import data from "./util";
 
 function App() {
+  //Add state
+  const [songs, setSongs] = useState(data);
+  const [currentsong, setCurrentsong] = useState(songs[0]);
   return (
     <div className="App">
-      <Song />
+      <Song currentSong={currentsong} />
       <Player />
     </div>
   );
