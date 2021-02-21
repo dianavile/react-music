@@ -40,17 +40,17 @@ function App() {
       <Player
         audioRef={audioRef}
         setIsPlaying={setIsPlaying}
-        currentSong={currentSong}
+        // currentSong={currentSong}
+        // setCurrentSong={setCurrentSong}
         isPlaying={isPlaying}
-        songInfo={songInfo}
         setSongInfo={setSongInfo}
+        songInfo={songInfo}
         songs={songs}
         setSongs={setSongs}
-        setCurrentSong={setCurrentSong}
       />
       <Library
         songs={songs}
-        setCurrentSong={setCurrentSong}
+        // setCurrentSong={setCurrentSong}
         audioRef={audioRef}
         isPlaying={isPlaying}
         setSongs={setSongs}
@@ -60,7 +60,7 @@ function App() {
         onLoadedMetadata={timeUpdateHandler} //when audiofile loads up
         onTimeUpdate={timeUpdateHandler}
         ref={audioRef}
-        src={currentSong.audio}
+        // src={currentSong.audio}
       ></audio>
     </div>
   );
