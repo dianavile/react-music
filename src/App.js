@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-//import Styles
 import "./styles/app.scss";
 //Add components
 import Player from "./components/Player";
@@ -8,6 +7,7 @@ import Library from "./components/Library";
 import Nav from "./components/Nav";
 //Add Util.js
 import data from "./util";
+//Util
 
 function App() {
   //Ref
@@ -21,11 +21,18 @@ function App() {
     duration: 0,
   });
   const [libraryStatus, setLibraryStatus] = useState(false);
+
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
-    setSongInfo({ ...songInfo, currentTime: current, duration });
+
+    setSongInfo({
+      ...songInfo,
+      currentTime: current,
+      duration: duration,
+    });
   };
+
   return (
     <div className="App">
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
@@ -33,22 +40,25 @@ function App() {
       <Player
         audioRef={audioRef}
         setIsPlaying={setIsPlaying}
+        currentSong={currentSong}
         isPlaying={isPlaying}
-        currentSong={currentsong}
-        setSongInfo={setSongInfo}
         songInfo={songInfo}
+        setSongInfo={setSongInfo}
+        songs={songs}
+        setSongs={setSongs}
+        setCurrentSong={setCurrentSong}
       />
       <Library
-        audioRef={audioRef}
         songs={songs}
         setCurrentSong={setCurrentSong}
+        audioRef={audioRef}
         isPlaying={isPlaying}
         setSongs={setSongs}
         libraryStatus={libraryStatus}
       />
       <audio
-        onTimeUpdate={timeUpdateHandler}
         onLoadedMetadata={timeUpdateHandler} //when audiofile loads up
+        onTimeUpdate={timeUpdateHandler}
         ref={audioRef}
         src={currentSong.audio}
       ></audio>
