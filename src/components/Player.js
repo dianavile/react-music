@@ -38,7 +38,7 @@ const Player = ({
      }
    };
   return (
-    <div className="player">
+    <div className="player-container">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
         <input
